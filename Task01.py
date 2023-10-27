@@ -1,16 +1,12 @@
-# Число А в степени B.
+# Даны два целых числа A И B. Вывести ысе числа от A До B включительно по возрастанию, если A < B и наоборот.
+
+def numbers(a, b):
+    if a == b:
+        return b
+    if a < b:
+        return f'{a} {numbers(a + 1, b)}'
+    if a > b:
+        return f'{numbers(a - 1, b)} {b}'
 
 
-def degree(a, b, c):
-    if b != 0:
-        c *= a
-        b -= 1
-
-    else:
-             return c
-             return degree(a, b, c)
-
-num1 = int(input("Enter Num1  "))
-num2 = int(input("Enter Num2  "))
-c = 1
-print(degree(num1, num2, c))
+print(numbers(10, 1))
